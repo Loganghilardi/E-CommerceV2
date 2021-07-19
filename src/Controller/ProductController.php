@@ -110,10 +110,14 @@ class ProductController extends AbstractController
                 $cart = $p;
             }
         }
+        
         if ($cart == null) {
             $this->redirectToRoute('product_index');
         }
 
+        /** On récupère le contenu du panier
+         * On mets à jour le produit SI et seulement si le produit est déja présent dans le panier
+         */
         $cartContents = $cart->getCartContents();
         foreach($cartContents as $c) {
             if ($c->getProduct()->getId() == $product->getId()) {
@@ -121,6 +125,7 @@ class ProductController extends AbstractController
             }
         }
 
+        // Si le contenu du panier est vide on le crée pour l'utilsateur et on remplit le contenu
         if ($cartContent == null) {
             $cartContent = new CartContent;
             $cartContent->setCart($cart);
