@@ -19,6 +19,15 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class UserController extends AbstractController
 {
+     /**
+     * @Route("/", name="user_index", methods={"GET"})
+     */
+    public function index(UserRepository $userRepository): Response
+    {
+        return $this->render('user/index.html.twig', [
+            'users' => $userRepository->findToday(),
+        ]);
+    }
 
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
@@ -35,18 +44,12 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
+    public function edit(Request $request, User $user): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user->setPassword(
-                $passwordEncoder->encodePassword(
-                    $user,
-                    $form->get('password')->getData()
-                )
-            );
 
             $this->getDoctrine()->getManager()->flush();
 
@@ -88,7 +91,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/user/mod/{id}", name="user_mod")
+     * @Route("/mod/{id}", name="user_mod")
      */
     public function modUser(User $user = null, TranslatorInterface $t)
     {
