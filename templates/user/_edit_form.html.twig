@@ -2,20 +2,17 @@
     <div class="row">
         <div class="col">
             {{ form_label(form.email) }}
-            {{ form_widget(form.email, {'attr': {'disabled': 'disabled'}}) }}
+            {{ form_widget(form.email)}}
         </div>
         <div class="col">
-            {{ form_label(form.nom) }}
-            {{ form_widget(form.nom) }}
+            {{ form_label(form.firstName) }}
+            {{ form_widget(form.firstName) }}
         </div>
         <div class="col">
-            {{ form_label(form.prenom) }}
-            {{ form_widget(form.prenom) }}
-        </div>
-        <div class="col">
-            {{ form_label(form.password) }}
-            {{ form_widget(form.password) }}
+            {{ form_label(form.lastName) }}
+            {{ form_widget(form.lastName) }}
         </div>
     </div>
     <button class="btn">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-primary" href="{{ path('user_show', {'id': user.id}) }}">{{'User Profile'|trans}}</a>
 {{ form_end(form) }}

@@ -17,28 +17,21 @@
             </tr>
             <tr>
                 <th>{{'FirstName'|trans}}</th>
-                <td>{{ user.prenom }}</td>
+                <td>{{ user.firstName }}</td>
             </tr>
             <tr>
                 <th>{{'LastName'|trans}}</th>
-                <td>{{ user.nom }}</td>
+                <td>{{ user.lastName }}</td>
             </tr>
-            <tr>
-                <th>{{'Role'|trans}}</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            {# <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr> #}
             <tr>
                 <th>{{'Orders'|trans}}</th>
                 <td>
-                    <ul>
-                        {% for panier in user.paniers %}
-                            {{ panier }}
-                        {% endfor %}
-                    </ul>
+                    {% for cart in user.carts %}
+                        <!-- Calcul du montant de la commande ici  -->
+                        {% if cart.status != false %}
+                            <a href="{{path('cart_show', {'id':cart.id})}}">{{cart.id}} Date Montant</a>
+                        {% endif %}
+                    {% endfor %}
                 </td>
             </tr>
         </tbody>
@@ -47,9 +40,8 @@
     
     {% if app.user is not null and (is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN'))%}
         <a class="btn btn-primary" href="{{ path('user_edit', {'id': user.id}) }}">{{'Edit'|trans}}</a>
+        <!-- Modifier uniquement le password -->
+        <a class="btn btn-primary" href="{{ path('user_edit_password', {'id': user.id}) }}">{{'Edit password'|trans}}</a>
     {% endif %}
     
-    {% if app.user is not null and (is_granted('ROLE_SUPER_ADMIN')) %}
-        {{ include('user/_delete_form.html.twig') }}
-    {% endif %}
 {% endblock %}

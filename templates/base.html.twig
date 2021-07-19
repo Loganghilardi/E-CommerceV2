@@ -15,15 +15,18 @@
         {% endblock %}
     </head>
     <body>
-        {% for type, messages in app.flashes %}
+        <main class="container">
 
+            {% for type, messages in app.flashes %}
+            
             {% for message in messages %}
-
-                <p class="alert alert-{{type}}"> {{ message }}</p>
-
+            
+            <p class="alert alert-{{type}}"> {{ message }}</p>
+            
             {% endfor %}
-
-        {% endfor %}
-        {% block body %}{% endblock %}
+            
+            {% endfor %}
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
