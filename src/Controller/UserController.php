@@ -101,14 +101,14 @@ class UserController extends AbstractController
         // Si l(id utilisateur n'existe pas, on renvoit vers la liste des utilisateurs)
         if($user == null){
             $this->addFlash('danger', $t->trans('user.notFound'));
-            $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('user_index');
         }
 
         // On protège les utilisateurs ROLE_SUPER_ADMIN
         if(in_array('ROLE_SUPER_ADMIN', $user->getRoles())){
 
             $this->addFlash('danger', $t->trans('User ').$user->getEmail().' '.$t->trans('user.cantmod'));
-            $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('user_index');
         }
 
         $em = $this->getDoctrine()->getManager();
