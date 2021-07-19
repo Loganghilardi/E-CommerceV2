@@ -9,13 +9,11 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Email</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>RegDate</th>
-                <th>actions</th>
+                <th>{{'Email'|trans}}</th>
+                <th>{{'FirstName'|trans}}</th>
+                <th>{{'LastName'|trans}}</th>
+                <th>{{'Role'|trans}}</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,23 +21,21 @@
             <tr>
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.firstName }}</td>
-                <td>{{ user.lastName }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.nom }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>{{ user.regDate ? user.regDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">{{'Show'|trans}}</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">{{'Edit'|trans}}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="7">{{'user.NotFound'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}">Create new</a>
+    <a href="{{ path('user_new') }}">{{'user.Create'|trans}}</a>
 {% endblock %}
