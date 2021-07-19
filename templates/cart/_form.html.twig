@@ -1,4 +1,45 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<table class="table">
+	<thead>
+		<tr>
+			<th>{{'panier.user' | trans}}</th>
+			<th>{{'panier.produit' | trans}}</th>
+			<th>{{'panier.montant' | trans}}</th>
+			<th>{{'panier.prix' | trans}}</th>
+			<th>{{'panier.total' | trans}}</th>
+			<th>{{'panier.date' | trans}}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% set sum = 0 %}
+		{% for cart in carts.cartContents %}
+			<tr>
+				<td>{{carts.user.firstName}}</td>
+				<td>{{cart.product.name}}</td>
+				<td>{{cart.quantity}}</td>
+				<td>{{cart.product.price}} €</td>
+				<td>{{ cart.quantity * cart.product.price}} € </td>
+				<td>{{cart.date | date('d/m/y')}}</td>
+				<td>
+					<a href="{{path('cart_delete', {id: cart.id})}}" class="btn btn-warning">Supprimer</a>
+				</td>
+			</tr>
+
+			{% set multiply = cart.quantity * cart.product.price %}
+			{% set sum = sum + multiply %}
+		{% else %}
+			<tr>
+				<td colspan="7">
+					{{'panier.disponible'|trans}}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	<tfoot>
+		<td colspan="3" class="text-right"><strong>{{'prix.total' | trans}} :</strong></td>
+		<td></td>
+		<td> {{ sum }} €
+	</tfoot>
+</table>
+
+

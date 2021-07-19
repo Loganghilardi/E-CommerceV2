@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Cart;
+use App\Entity\CartContent;
 use App\Form\CartType;
 use App\Repository\CartRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/cart")
@@ -20,75 +22,37 @@ class CartController extends AbstractController
      */
     public function index(CartRepository $cartRepository): Response
     {
+        $cart = null;
+
+        // Parcours le CardContent afin de récupérer les informations pour l'affichage
+        $carts = $this->getUser()->getCarts();
+        foreach ($carts as $p) {
+            if ($p->getStatus() == false) {
+                $cart = $p;
+            }
+        }
+
+        if ($cart == null) {
+            $this->redirectToRoute('product_index');
+        }
+
         return $this->render('cart/index.html.twig', [
-            'carts' => $cartRepository->findAll(),
+            'cart' => $cart,
         ]);
     }
 
     /**
-     * @Route("/new", name="cart_new", methods={"GET","POST"})
+     * @Route("/delete/{id}", name="cart_delete")
      */
-    public function new(Request $request): Response
+    public function deleteProduct(CartContent $cartContent, TranslatorInterface $t): Response
     {
-        $cart = new Cart();
-        $form = $this->createForm(CartType::class, $cart);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+       
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($cart);
+            $entityManager->remove($cartContent);
             $entityManager->flush();
 
-            return $this->redirectToRoute('cart_index', [], Response::HTTP_SEE_OTHER);
-        }
+            $this->addFlash('success', $t->trans('produit.deleted'));
 
-        return $this->renderForm('cart/new.html.twig', [
-            'cart' => $cart,
-            'form' => $form,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="cart_show", methods={"GET"})
-     */
-    public function show(Cart $cart): Response
-    {
-        return $this->render('cart/show.html.twig', [
-            'cart' => $cart,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="cart_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Cart $cart): Response
-    {
-        $form = $this->createForm(CartType::class, $cart);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('cart_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->renderForm('cart/edit.html.twig', [
-            'cart' => $cart,
-            'form' => $form,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="cart_delete", methods={"POST"})
-     */
-    public function delete(Request $request, Cart $cart): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$cart->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($cart);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('cart_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('cart_index');
     }
 }

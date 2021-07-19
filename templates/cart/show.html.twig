@@ -22,6 +22,10 @@
         </tbody>
     </table>
 
+    <pre>
+        {{ dump(cart) }}
+    </pre>
+
     <a href="{{ path('cart_index') }}">back to list</a>
 
     <a href="{{ path('cart_edit', {'id': cart.id}) }}">edit</a>

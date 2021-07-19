@@ -18,3 +18,25 @@ error:
     std: An error has occurred.
     notFound: Page not found
     internalError: Server Internal Error
+panier:
+  buy: Buy the cart
+  disponible : No cart available
+  produit: Product name
+  quantite : Quantity
+  prix: Price
+  montant: Amount
+  user: User
+  date: Date
+  total: Total
+
+Panier: Cart
+
+produit:
+  added: Product added
+  deleted: Product deleted
+
+prix:
+  total: Total price
+
+Sauvegarder: Sauvegarder
+Supprimer : Delete 
