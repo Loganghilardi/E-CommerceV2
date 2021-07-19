@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\CartContent;
 use App\Entity\Product;
+use App\Form\CartContentType;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -90,5 +92,43 @@ class ProductController extends AbstractController
         }
 
         return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    /** @Route("/cart/{id}/add", name="cart_add") */
+    public function addProductToCart(Product $product, Request $request): Response
+    {
+        $cart = $this->getUser()->getCarts();
+        foreach ($cart as $p) {
+            if ($p->getEtat() == false) {
+                $cart = $p;
+            }
+        }
+        if ($cart == null) {
+            $this->redirectToRoute('product_index');
+        }
+
+        $cartContent = $cart->getCartContent();
+        if ($cartContent == null) {
+            $cartContent = new CartContent;
+            $cartContent->setCart($cart);
+        }
+
+        $form = $this->createForm(CartContentType::class, $cartContent);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $cartContent->setProduct($product);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($cartContent);
+            $entityManager->flush();
+        }
+
+        return $this->renderForm('product/cartAdd.html.twig', [
+            'product' => $product,
+            'form' => $form,
+            'cart' => $cart,
+            'cartContent' => $cartContent,
+        ]);
     }
 }

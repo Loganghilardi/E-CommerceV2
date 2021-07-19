@@ -1,0 +1,11 @@
+panier:
+  buy: Acheter le panier
+  disponible : Pas de paniers disponible
+  produit: Nom du produit
+  quantite : Quantité
+  prix: Prix
+  montant: Montant
+  user : Utilisateur
+  date: Date
+
+Panier: Panier

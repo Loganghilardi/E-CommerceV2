@@ -1,4 +1,35 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<table class="table">
+	<thead>
+		<tr>
+			<th>{{'panier.user' | trans}}</th>
+			<th>{{'panier.produit' | trans}}</th>
+			<th>{{'panier.prix' | trans}}</th>
+			<th>{{'panier.date' | trans}}</th>
+			<th>{{'panier.montant' | trans}}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for cart in carts %}
+			<tr>
+				<td>{{cart.user.prenom}}</td>
+				<td></td>
+				<td></td>
+				<td>{{cart.dateBuy | date('d/m/Y')}}</td>
+				<td></td>
+				<td></td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="7">
+					{{'panier.disponible'|trans}}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+
+	<pre>
+		{{ dump(cart) }}
+	</pre>
+</table>
+

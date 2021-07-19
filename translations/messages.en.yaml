@@ -1,0 +1,11 @@
+panier:
+  buy: Buy the cart
+  disponible : No cart available
+  produit: Product name
+  quantite : Quantity
+  prix: Price
+  montant: Amount
+  user: User
+  date: Date
+
+Panier: Cart

@@ -26,5 +26,7 @@
 
     <a href="{{ path('cart_edit', {'id': cart.id}) }}">edit</a>
 
+    <a href="{{ path('cart_add', {'id': product.id}) }}">Ajouter au panier</a>
+
     {{ include('cart/_delete_form.html.twig') }}
 {% endblock %}
