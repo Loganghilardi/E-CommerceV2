@@ -1,0 +1,19 @@
+produit: 
+  added: Product added
+  empty: There is no product
+  add: Add a product
+  unknow: Product unknow
+  updated: Product updated
+  edit: Edit product
+  deleted: Product deleted
+  delete: Delete product
+
+Produits: Products
+Produit: Product
+
+Liste de nos produits: List of products
+Description du produit: Product description
+Prix du produit: Product price
+Stock disponible: Available stock
+
+Sauvegarder: Save

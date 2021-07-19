@@ -1,33 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
+        <a class="navbar-brand" href="{{path('home')}}">E-Commerce</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{{path('home')}}">Accueil</a>
+					<a class="nav-link" aria-current="page" href="{{path('home')}}">Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{path('product_index')}}">Produit</a>
+					<a class="nav-link" href="{{path('product_index')}}">{{ 'Produits'|trans }}</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">Panier</a>
 				</li>
-				<li class="nav-item">
-					{% if app.user %}
-						<a class="nav-link">Bonjour
-							{{app.user.email}}
-						</a>
-					{% else %}
-						<a class="nav-link" href="{{path('app_login')}}">Se Connecter</a>
-					{% endif %}
-				</li>
-				<li class="nav-item">
-					{% if app.user %}
-						<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
-					{% else %}
-						<a class="nav-link" href="{{path('app_register')}}">S'inscrire</a>
-					{% endif %}
-				</li>
-			</ul>
+            </ul>
+
+            <div class="d-flex">
+                {% if app.user %}
+                <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                {% else %}
+                    <a class="nav-link" href="{{path('app_register')}}">S'inscrire</a>
+                {% endif %}
+                {% if app.user %}
+                    <a class="nav-link">Bonjour
+                        {{app.user.email}}
+                    </a>
+                {% else %}
+                    <a class="nav-link" href="{{path('app_login')}}">Se Connecter</a>
+                {% endif %}
+            </div>
 		</div>
 	</div>
 </nav>
