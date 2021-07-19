@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{{path('home')}}">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('product_index')}}">Produit</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Panier</a>
+				</li>
+				<li class="nav-item">
+					{% if app.user %}
+						<a class="nav-link">Bonjour
+							{{app.user.email}}
+						</a>
+					{% else %}
+						<a class="nav-link" href="{{path('app_login')}}">Se Connecter</a>
+					{% endif %}
+				</li>
+				<li class="nav-item">
+					{% if app.user %}
+						<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+					{% else %}
+						<a class="nav-link" href="{{path('app_register')}}">S'inscrire</a>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
