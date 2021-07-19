@@ -11,6 +11,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#">Panier</a>
 				</li>
+				{% if is_granted('ROLE_SUPER_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('user_index')}}">{{ 'user.title' | trans}}</a>
+				</li>
+				{% endif %}
 				<li class="nav-item">
 					{% if app.user %}
 						<a class="nav-link">Bonjour

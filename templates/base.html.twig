@@ -15,17 +15,19 @@
         {% endblock %}
     </head>
     <body>
-        <main class="container">
+        {% include "navbar.html.twig" %}
+        {% for type, messages in app.flashes %}
 
             {% for type, messages in app.flashes %}
             
-            {% for message in messages %}
-            
-            <p class="alert alert-{{type}}"> {{ message }}</p>
-            
+                {% for message in messages %}
+                
+                <p class="alert alert-{{type}}"> {{ message }}</p>
+                
+                {% endfor %}
             {% endfor %}
-            
-            {% endfor %}
+        {% endfor %}
+        <main class="container">
             {% block body %}{% endblock %}
         </main>
     </body>

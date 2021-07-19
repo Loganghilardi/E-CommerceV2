@@ -7,3 +7,23 @@ Email: Email
 FirstName: Prénom
 LastName: Nom
 Orders: Commande
+Email: E-mail
+First Name: Prénom
+Last Name: Nom
+Registration date: Date d'inscription
+Role: Rôle
+Mod user: Mod utilisateur
+User: Utilisateur
+user:
+    title: Liste des utilisateurs
+    empty: Il n'y a pas d'utilisateur!
+    notFound: Utilisateur introuvable
+    mod: a désormais accès au rôle
+    unmod: n'a plus accès au rôle
+    cantmod: ne peut pas être modifié car leur rôle est ROLE_SUPER_ADMIN
+User index: Liste des utilisateurs inscrits aujourd'hui
+Error: Erreur
+error:
+    std: Une erreur est survenue.
+    notFound: Page non trouvée
+    internalError: Erreur interne du serveur
