@@ -7,5 +7,16 @@ panier:
   montant: Montant
   user : Utilisateur
   date: Date
+  total: Total
 
 Panier: Panier
+
+produit:
+  added: Produit ajouté
+  deleted : Produit supprimé
+
+prix:
+  total: Prix total 
+
+Sauvegarder: Sauvegarder
+Supprimer : Supprimer

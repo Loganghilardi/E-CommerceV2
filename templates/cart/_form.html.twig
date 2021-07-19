@@ -3,22 +3,30 @@
 		<tr>
 			<th>{{'panier.user' | trans}}</th>
 			<th>{{'panier.produit' | trans}}</th>
-			<th>{{'panier.prix' | trans}}</th>
-			<th>{{'panier.date' | trans}}</th>
 			<th>{{'panier.montant' | trans}}</th>
+			<th>{{'panier.prix' | trans}}</th>
+			<th>{{'panier.total' | trans}}</th>
+			<th>{{'panier.date' | trans}}</th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
-		{% for cart in carts %}
+		{% set sum = 0 %}
+		{% for cart in carts.cartContents %}
 			<tr>
-				<td>{{cart.user.prenom}}</td>
-				<td></td>
-				<td></td>
-				<td>{{cart.dateBuy | date('d/m/Y')}}</td>
-				<td></td>
-				<td></td>
+				<td>{{carts.user.firstName}}</td>
+				<td>{{cart.product.name}}</td>
+				<td>{{cart.quantity}}</td>
+				<td>{{cart.product.price}} €</td>
+				<td>{{ cart.quantity * cart.product.price}} € </td>
+				<td>{{cart.date | date('d/m/y')}}</td>
+				<td>
+					<a href="{{path('cart_delete', {id: cart.id})}}" class="btn btn-warning">Supprimer</a>
+				</td>
 			</tr>
+
+			{% set multiply = cart.quantity * cart.product.price %}
+			{% set sum = sum + multiply %}
 		{% else %}
 			<tr>
 				<td colspan="7">
@@ -27,9 +35,11 @@
 			</tr>
 		{% endfor %}
 	</tbody>
-
-	<pre>
-		{{ dump(cart) }}
-	</pre>
+	<tfoot>
+		<td colspan="3" class="text-right"><strong>{{'prix.total' | trans}} :</strong></td>
+		<td></td>
+		<td> {{ sum }} €
+	</tfoot>
 </table>
+
 

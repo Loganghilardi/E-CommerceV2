@@ -20,6 +20,8 @@ class RegistrationController extends AbstractController
     {
         $user = new User();
         $cart = new Cart();
+        $cart->setUser($user);
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
@@ -37,6 +39,7 @@ class RegistrationController extends AbstractController
             $cart->setStatus(false);
             
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($cart);
             $entityManager->persist($user);
             $entityManager->flush();
 

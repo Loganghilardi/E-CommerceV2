@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Cart;
 use App\Entity\CartContent;
 use App\Entity\Product;
+use App\Entity\User;
 use App\Form\CartContentType;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
@@ -11,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/product")
@@ -53,7 +56,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/{id}", name="product_show", methods={"GET"})
      */
-    public function show(Product $product): Response
+    public function show(Product $product, Request $request): Response
     {
         return $this->render('product/show.html.twig', [
             'product' => $product,
@@ -95,11 +98,15 @@ class ProductController extends AbstractController
     }
 
     /** @Route("/cart/{id}/add", name="cart_add") */
-    public function addProductToCart(Product $product, Request $request): Response
+    public function addProductToCart(Product $product, Request $request, TranslatorInterface $t): Response
     {
-        $cart = $this->getUser()->getCarts();
-        foreach ($cart as $p) {
-            if ($p->getEtat() == false) {
+        $cartContent = null;
+        $cart = null;
+
+        $carts = $this->getUser()->getCarts();
+        foreach ($carts as $p) {
+            // Si l'état du panier est false, on prend le panier actuel pour l'ajout du produit
+            if ($p->getStatus() == false) {
                 $cart = $p;
             }
         }
@@ -107,10 +114,17 @@ class ProductController extends AbstractController
             $this->redirectToRoute('product_index');
         }
 
-        $cartContent = $cart->getCartContent();
+        $cartContents = $cart->getCartContents();
+        foreach($cartContents as $c) {
+            if ($c->getProduct()->getId() == $product->getId()) {
+                $cartContent = $c;
+            }
+        }
+
         if ($cartContent == null) {
             $cartContent = new CartContent;
             $cartContent->setCart($cart);
+            $cartContent->setProduct($product);
         }
 
         $form = $this->createForm(CartContentType::class, $cartContent);
@@ -118,16 +132,20 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $cartContent->setProduct($product);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($cartContent);
             $entityManager->flush();
+
+            $this->addFlash('success', $t->trans('produit.added'));
+
+            return $this->redirectToRoute('product_index');
         }
 
         return $this->renderForm('product/cartAdd.html.twig', [
             'product' => $product,
             'form' => $form,
             'cart' => $cart,
+            'carts' => $carts,
             'cartContent' => $cartContent,
         ]);
     }
