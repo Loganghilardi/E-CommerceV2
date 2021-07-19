@@ -26,9 +26,9 @@
                     <td>{{ user.regDate|date("Y-m-d H:i:s")}}</td>
                     <td>
                     {% if 'ROLE_SUPER_ADMIN' in user.roles %}
-                        ROLE_SUPER_ADMIN
+                        <p class="btn btn-outline-danger disabled">ROLE_SUPER_ADMIN</p>
                     {% elseif 'ROLE_ADMIN' in user.roles %}
-                        ROLE_ADMIN
+                        <p class="btn btn-outline-success disabled">ROLE_ADMIN</p>
                     {% endif %}
                     </td>
                     <td>
