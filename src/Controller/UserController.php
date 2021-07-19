@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Cart;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
@@ -54,8 +55,13 @@ class UserController extends AbstractController
      */
     public function show(User $user): Response
     {
+        dump($this->getUser());
+        //Donner les panier pour l'historique des commandes
+        $entityManager = $this->getDoctrine()->getManager();
+        $carts = $entityManager->getRepository(Cart::class)->findAll();
         return $this->render('user/show.html.twig', [
             'user' => $user,
+            'carts' => $carts,
         ]);
     }
 
