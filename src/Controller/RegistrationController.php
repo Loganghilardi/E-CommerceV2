@@ -34,11 +34,14 @@ class RegistrationController extends AbstractController
                 )
             );
 
+            // Crée un panier vide pour un nouvel utilisateur
+            $user->addCart($cart);
+            $cart->setStatus(false);
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($cart);
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
 
             return $this->redirectToRoute('app_login');
         }
