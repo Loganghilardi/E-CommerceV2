@@ -36,6 +36,27 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    /**
+     * @return User[] Returns an array of User objects
+     */
+    public function findToday()
+    {
+        // On stocke les datetime de début et de fin pour la journée d'aujourd'hui
+        $now = new \DateTime();
+        $from = new \DateTime($now->format("Y-m-d")." 00:00:00");
+        $to = new \DateTime($now->format("Y-m-d")." 23:59:59");
+
+        // On renvoit les utilisateurs inscrits aujourd'hui
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.regDate BETWEEN :from AND :to')
+            ->setParameter('from', $from)
+            ->setParameter('to', $to)
+            ->orderBy('u.regDate', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

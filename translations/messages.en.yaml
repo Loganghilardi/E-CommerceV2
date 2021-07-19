@@ -1,0 +1,20 @@
+Email: Email
+First Name: First Name
+Last Name: Last Name
+Registration date: Registration date
+Role: Role
+Mod user: Mod user
+User: User
+user:
+    title: User list
+    empty: There are no users!
+    notFound: User not found
+    mod: has been promoted to
+    unmod: has been demoted from
+    cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
+User index: List of users registered today
+Error: Error
+error:
+    std: An error has occurred.
+    notFound: Page not found
+    internalError: Server Internal Error

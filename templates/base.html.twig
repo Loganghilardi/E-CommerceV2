@@ -15,6 +15,7 @@
         {% endblock %}
     </head>
     <body>
+        {% include "navbar.html.twig" %}
         {% for type, messages in app.flashes %}
 
             {% for message in messages %}
