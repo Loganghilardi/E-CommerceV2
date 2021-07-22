@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}{{'User'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>{{'User'|trans}}</h1>
 
     <table class="table">
         <tbody>
@@ -12,19 +12,19 @@
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>{{'Email'|trans}}</th>
+                <th>{{'user.email'|trans}}</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>{{'FirstName'|trans}}</th>
+                <th>{{'user.firstname'|trans}}</th>
                 <td>{{ user.firstName }}</td>
             </tr>
             <tr>
-                <th>{{'LastName'|trans}}</th>
+                <th>{{'user.lastname'|trans}}</th>
                 <td>{{ user.lastName }}</td>
             </tr>
             <tr>
-                <th>{{'Orders'|trans}}</th>
+                <th>{{'user.orders'|trans}}</th>
                 <td>
                     {% for cart in user.carts %}
                         <!-- Calcul du montant de la commande ici  -->
@@ -40,8 +40,7 @@
     
     {% if app.user is not null and (is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN'))%}
         <a class="btn btn-primary" href="{{ path('user_edit', {'id': user.id}) }}">{{'Edit'|trans}}</a>
-        <!-- Modifier uniquement le password -->
-        <a class="btn btn-primary" href="{{ path('user_edit_password', {'id': user.id}) }}">{{'Edit password'|trans}}</a>
+        <a class="btn btn-primary" href="{{ path('user_edit_password', {'id': user.id}) }}">{{'user.editPassWord'|trans}}</a>
     {% endif %}
     
 {% endblock %}

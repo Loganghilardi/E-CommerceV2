@@ -51,7 +51,7 @@ class CartController extends AbstractController
             $entityManager->remove($cartContent);
             $entityManager->flush();
 
-            $this->addFlash('success', $t->trans('produit.deleted'));
+            $this->addFlash('success', $t->trans('product.deleted'));
 
         return $this->redirectToRoute('cart_index');
     }

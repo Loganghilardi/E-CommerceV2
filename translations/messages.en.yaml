@@ -1,42 +1,79 @@
+Home: Home
+Hello: Hello
+Login: Login
+LoginMessage: You are logged in as
+SignInMessage: Please sign in
+Password: Password
 Email: Email
-First Name: First Name
-Last Name: Last Name
-Registration date: Registration date
-Role: Role
-Mod user: Mod user
+Logout: Logout
+Register: Register
+Show: Show
+Edit: Edit
+Save: Save
+Create: Create
+BackToList: BackToList
+Delete : Delete
+
 User: User
+
 user:
-    title: User list
-    empty: There are no users!
-    notFound: User not found
-    mod: has been promoted to
-    unmod: has been demoted from
-    cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
-User index: List of users registered today
+  role: Role
+  registrationDate: Registrate Date
+  editRole: Edit the role
+  profile: Profile
+  editUser: Edit the user
+  editPassWord: Edit Password
+  email: E-Mail
+  firstname: Firstname
+  lastname: Lastname
+  orders: Orders
+  title: User list
+  toDays: List of users registered today
+  empty: There are no users!
+  notFound: User not found
+  mod: has been promoted to
+  unmod: has been demoted from
+  cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
+
+
 Error: Error
 error:
-    std: An error has occurred.
-    notFound: Page not found
-    internalError: Server Internal Error
-panier:
+  std: An error has occurred.
+  notFound: Page not found
+  internalError: Server Internal Error
+
+Cart: Cart
+NewCart: New Cart
+CreateNewCart: Create new Cart
+EditCart: Edit the Cart
+
+cart:
   buy: Buy the cart
-  disponible : No cart available
-  produit: Product name
-  quantite : Quantity
-  prix: Price
-  montant: Amount
-  user: User
+  available : No cart available
+  product: Name of the product
+  price: Price
+  amount: Amount
+  user : User
   date: Date
   total: Total
+  datebuy: Date Buy
+  status: Status
 
-Panier: Cart
+price:
+  total: Total Price 
 
-produit:
+Product: Product
+NewProduct: New Product
+
+product:
+  quantity : Quantity
   added: Product added
-  deleted: Product deleted
-
-prix:
-  total: Total price
-
-Sauvegarder: Sauvegarder
-Supprimer : Delete 
+  deleted : Product deleted
+  name: Name
+  description: Description
+  price: Price
+  stock: Stock
+  image: Image
+  actions: Actions
+  addToCart: Add to the Cart
+  edit: Edit the product

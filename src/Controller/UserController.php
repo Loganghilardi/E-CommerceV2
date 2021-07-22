@@ -64,6 +64,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("/{id}/edit/password", name="user_edit_password", methods={"GET","POST"})
+     * Modifie uniquement le mot de passe de l'utilisateur
      */
     public function editPassword(Request $request, User $user, UserPasswordEncoderInterface $passwordEncoder): Response
     {

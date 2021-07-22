@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Cart{% endblock %}
+{% block title %}{{'Cart'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Cart</h1>
+    <h1>{{'Cart'|trans}}</h1>
 
     <table class="table">
         <tbody>
@@ -12,11 +12,11 @@
                 <td>{{ cart.id }}</td>
             </tr>
             <tr>
-                <th>DateBuy</th>
+                <th>{{'cart.datebuy'|trans}}</th>
                 <td>{{ cart.dateBuy ? cart.dateBuy|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Status</th>
+                <th>{{'cart.status'|trans}}</th>
                 <td>{{ cart.status ? 'Yes' : 'No' }}</td>
             </tr>
         </tbody>
@@ -26,9 +26,9 @@
         {{ dump(cart) }}
     </pre>
 
-    <a href="{{ path('cart_index') }}">back to list</a>
+    <a href="{{ path('cart_index') }}">{{'BackToList'|trans}}</a>
 
-    <a href="{{ path('cart_edit', {'id': cart.id}) }}">edit</a>
+    <a href="{{ path('cart_edit', {'id': cart.id}) }}">{{'cart.datebuy'|trans}}</a>
 
     {{ include('cart/_delete_form.html.twig') }}
 {% endblock %}

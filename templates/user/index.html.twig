@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'user.title' | trans}}{% endblock %}
+{% block title %}{{ 'user.title'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>{{'User index' | trans}}</h1>
+    <h1>{{'user.toDays'|trans}}</h1>
 
     {% if users is not empty %}
         <table class="table">
             <thead>
                 <tr>
-                    <th>{{'Email' | trans}}</th>
-                    <th>{{'First Name' | trans}}</th>
-                    <th>{{'Last Name' | trans}}</th>
-                    <th>{{'Registration date' | trans}}</th>
-                    <th>{{'Role' | trans}}</th>
+                    <th>{{'user.email'|trans}}</th>
+                    <th>{{'user.firstname'|trans}}</th>
+                    <th>{{'user.lastname'|trans}}</th>
+                    <th>{{'user.registrationDate'|trans}}</th>
+                    <th>{{'user.role'|trans}}</th>
                     <th></th>
                 </tr>
             </thead>
@@ -32,14 +32,14 @@
                     {% endif %}
                     </td>
                     <td>
-                        <a class="btn btn-primary" href="{{ path('user_mod', {'id': user.id}) }}" role="button">{{'Mod user' | trans}}</a>
+                        <a class="btn btn-primary" href="{{ path('user_mod', {'id': user.id}) }}" role="button">{{'user.editRole'|trans}}</a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     {% else %}
-        <p>{{ 'user.empty' | trans}}</p>
+        <p>{{ 'user.empty'|trans}}</p>
     {% endif %}
 {% endblock %}
 
