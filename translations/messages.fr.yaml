@@ -8,6 +8,7 @@ panier:
   user : Utilisateur
   date: Date
   total: Total
+  pay : Panier payé
 
 Panier: Panier
 
