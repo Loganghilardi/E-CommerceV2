@@ -12,35 +12,35 @@ Edit: Edit
 Save: Save
 Create: Create
 BackToList: BackToList
-Delete : Delete
+Delete: Delete
 
 User: User
 
 user:
-  role: Role
-  registrationDate: Registrate Date
-  editRole: Edit the role
-  profile: Profile
-  editUser: Edit the user
-  editPassWord: Edit Password
-  email: E-Mail
-  firstname: Firstname
-  lastname: Lastname
-  orders: Orders
-  title: User list
-  toDays: List of users registered today
-  empty: There are no users!
-  notFound: User not found
-  mod: has been promoted to
-  unmod: has been demoted from
-  cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
-
+    role: Role
+    registrationDate: Registrate Date
+    editRole: Edit the role
+    profile: Profile
+    editUser: Edit the user
+    editPassWord: Edit Password
+    email: E-Mail
+    firstname: Firstname
+    lastname: Lastname
+    orders: Orders
+    title: User list
+    toDays: List of users registered today
+    empty: There are no users!
+    notFound: User not found
+    mod: has been promoted to
+    unmod: has been demoted from
+    cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
 
 Error: Error
 error:
-  std: An error has occurred.
-  notFound: Page not found
-  internalError: Server Internal Error
+    std: An error has occurred.
+    notFound: Page not found
+    internalError: Server Internal Error
+    forbidden: Access denied
 
 Cart: Cart
 NewCart: New Cart
@@ -48,32 +48,32 @@ CreateNewCart: Create new Cart
 EditCart: Edit the Cart
 
 cart:
-  buy: Buy the cart
-  available : No cart available
-  product: Name of the product
-  price: Price
-  amount: Amount
-  user : User
-  date: Date
-  total: Total
-  datebuy: Date Buy
-  status: Status
+    buy: Buy the cart
+    available: No cart available
+    product: Name of the product
+    price: Price
+    amount: Amount
+    user: User
+    date: Date
+    total: Total
+    datebuy: Date Buy
+    status: Status
 
 price:
-  total: Total Price 
+    total: Total Price
 
 Product: Product
 NewProduct: New Product
 
 product:
-  quantity : Quantity
-  added: Product added
-  deleted : Product deleted
-  name: Name
-  description: Description
-  price: Price
-  stock: Stock
-  image: Image
-  actions: Actions
-  addToCart: Add to the Cart
-  edit: Edit the product
+    quantity: Quantity
+    added: Product added
+    deleted: Product deleted
+    name: Name
+    description: Description
+    price: Price
+    stock: Stock
+    image: Image
+    actions: Actions
+    addToCart: Add to the Cart
+    edit: Edit the product

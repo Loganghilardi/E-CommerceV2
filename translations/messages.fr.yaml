@@ -41,6 +41,7 @@ error:
     std: Une erreur est survenue.
     notFound: Page non trouvée
     internalError: Erreur interne du serveur
+  forbidden: Accès interdit
 
 Cart: Panier
 NewCart: Nouveau Panier
