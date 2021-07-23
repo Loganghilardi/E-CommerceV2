@@ -20,7 +20,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class UserController extends AbstractController
 {
      /**
-     * @Route("/", name="user_index", methods={"GET"})
+     * @Route("/mod", name="user_index", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
     {

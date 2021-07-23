@@ -13,7 +13,7 @@
 				</li>
 				{% if is_granted('ROLE_SUPER_ADMIN') %}
 				<li class="nav-item">
-					<a class="nav-link" href="{{path('user_index')}}">{{ 'user.title'|trans}}</a>
+					<a class="nav-link text-primary" href="{{path('user_index')}}">{{ 'user.title'|trans}}</a>
 				</li>
 				{% endif %}
 				<li class="nav-item">
