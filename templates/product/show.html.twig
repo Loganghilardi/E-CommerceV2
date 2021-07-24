@@ -21,7 +21,13 @@
                         <a class="btn btn-sm btn-secondary" href="{{ path('product_edit', {'id': product.id}) }}">{{'produit.edit'|trans}}</a>
                         {{ include('product/_delete_form.html.twig') }}
                         {% endif %}
-                                 
+                        
+                        {% if is_granted('ROLE_USER') %} 
+                        <a class="btn btn-sm btn-secondary" href="">Ajouter au panier</a>
+                        {% else %}
+                            <a class="btn btn-sm btn-secondary" href="{{path('app_login')}}">Connecter vous pour ajouter le produit au panier</a>
+                        {% endif %}
+         
                     </div>
                 </div>
             </div>
