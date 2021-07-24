@@ -1,3 +1,13 @@
+produit: 
+  added: Produit ajouté
+  empty: Aucun produit disponible
+  add: Ajouter un produit
+  unknow: Produit inconnu
+  updated: Produit mis à jour
+  edit: Modifier le produit
+  deleted: Produit supprimé
+  delete: Supprimer le produit
+
 panier:
   buy: Acheter le panier
   disponible : Pas de paniers disponible
@@ -9,15 +19,24 @@ panier:
   date: Date
   total: Total
   pay : Panier payé
-
-Panier: Panier
-
-produit:
-  added: Produit ajouté
-  deleted : Produit supprimé
-
+  
 prix:
   total: Prix total 
+  
+Produits: Produits
+Produit: Produit
+
+Liste de nos produits: Liste de nos produits
+Description du produit: Description du produit
+Prix du produit: Prix du produit
+Stock disponible: Stock disponible
+Pas de produits disponible: Pas de produits disponible
+
+Bonjour: Bonjour
+Connexion: Connexion
+Inscription: Inscription
+Déconnexion: Déconnexion
 
 Sauvegarder: Sauvegarder
+Panier: Panier
 Supprimer : Supprimer

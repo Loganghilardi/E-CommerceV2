@@ -1,3 +1,13 @@
+produit: 
+  added: Product added
+  empty: There is no product
+  add: Add a product
+  unknow: Product unknow
+  updated: Product updated
+  edit: Edit product
+  deleted: Product deleted
+  delete: Delete product
+  
 panier:
   buy: Buy the cart
   disponible : No cart available
@@ -10,14 +20,23 @@ panier:
   total: Total
   pay : Cart paid
 
-Panier: Cart
-
-produit:
-  added: Product added
-  deleted: Product deleted
-
 prix:
   total: Total price
+  
+Produits: Products
+Produit: Product
 
-Sauvegarder: Sauvegarder
+Liste de nos produits: List of products
+Description du produit: Product description
+Prix du produit: Product price
+Stock disponible: Available stock
+Pas de produits disponible: No products available
+
+Bonjour: Hello
+Connexion: Log in
+Inscription: Register
+Déconnexion: Log out
+
+Sauvegarder: Save
+Panier: Cart
 Supprimer : Delete 

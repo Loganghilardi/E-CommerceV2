@@ -56,6 +56,7 @@ class Product
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\File(mimeTypes={ "image/png", "image/jpeg" }) 
      */
     private $image;
 
