@@ -48,6 +48,17 @@ CreateNewCart: Créer un nouveau Panier
 EditCart: Modifier Panier
 
 cart:
+produit: 
+  added: Produit ajouté
+  empty: Aucun produit disponible
+  add: Ajouter un produit
+  unknow: Produit inconnu
+  updated: Produit mis à jour
+  edit: Modifier le produit
+  deleted: Produit supprimé
+  delete: Supprimer le produit
+
+panier:
   buy: Acheter le panier
   available : Pas de paniers disponible
   product: Nom du produit
@@ -78,3 +89,25 @@ product:
   addToCart: Ajouter au panier
   edit: Modifier un Produit
 
+  pay : Panier payé
+  
+prix:
+  total: Prix total 
+  
+Produits: Produits
+Produit: Produit
+
+Liste de nos produits: Liste de nos produits
+Description du produit: Description du produit
+Prix du produit: Prix du produit
+Stock disponible: Stock disponible
+Pas de produits disponible: Pas de produits disponible
+
+Bonjour: Bonjour
+Connexion: Connexion
+Inscription: Inscription
+Déconnexion: Déconnexion
+
+Sauvegarder: Sauvegarder
+Panier: Panier
+Supprimer : Supprimer

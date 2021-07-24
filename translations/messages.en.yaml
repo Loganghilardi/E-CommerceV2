@@ -48,6 +48,17 @@ CreateNewCart: Create new Cart
 EditCart: Edit the Cart
 
 cart:
+produit: 
+  added: Product added
+  empty: There is no product
+  add: Add a product
+  unknow: Product unknow
+  updated: Product updated
+  edit: Edit product
+  deleted: Product deleted
+  delete: Delete product
+  
+panier:
   buy: Buy the cart
   available : No cart available
   product: Name of the product
@@ -77,3 +88,25 @@ product:
   actions: Actions
   addToCart: Add to the Cart
   edit: Edit the product
+  pay : Cart paid
+
+prix:
+  total: Total price
+  
+Produits: Products
+Produit: Product
+
+Liste de nos produits: List of products
+Description du produit: Product description
+Prix du produit: Product price
+Stock disponible: Available stock
+Pas de produits disponible: No products available
+
+Bonjour: Hello
+Connexion: Log in
+Inscription: Register
+Déconnexion: Log out
+
+Sauvegarder: Save
+Panier: Cart
+Supprimer : Delete 

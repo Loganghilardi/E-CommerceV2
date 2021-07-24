@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{'Hello'|trans}}{% endblock %}
+{% block title %}Accueil | Ecommerce{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div style="background-color: #f8f9fa;" class="container bg">
+    <div class="row d-flex justify-content-between p-2">
+        <h3 class="col-3">{{'Liste de nos produits'|trans}}</h3>
+        {% if is_granted('ROLE_ADMIN') %} 
+            <a class="btn btn-primary col-2" href="{{ path('product_new') }}">{{'produit.add'|trans}}</a>
+        {% endif %}
+    </div>
 
-<div class="example-wrapper">
-    <h1>{{'Hello'|trans}} {{ controller_name }}! ✅</h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4 mx-4">
+        {% for product in products %}
+        <div class="col">
+            <a style="text-decoration: none; color: black;" href="{{ path('product_show', {'id': product.id}) }}">
+            <div class="card h-100">
+              <img src="{{'/uploads/' ~ product.image}}" class="card-img-top" alt="Image du produit">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+              </div>
+            </div>
+        </a>
+          </div>
+          {% else %}
+          <div>
+            <p>{{'Pas de produits disponible'|trans}}</p>
+          </div>
+        {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/cours 1207/Ecommercev2/Eval/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/cours 1207/Ecommercev2/Eval/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
+    </div>
 </div>
+
 {% endblock %}

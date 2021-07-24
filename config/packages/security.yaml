@@ -23,7 +23,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: product_index
+                target: home
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -34,6 +34,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - {path: ^/product, roles: ROLE_USER }
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/product/new, roles: ROLE_ADMIN }
+        - { path: ^/product/[0-9]+/edit, roles: ROLE_ADMIN }
+        - { path: ^/product/[0-9]+/delete, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
