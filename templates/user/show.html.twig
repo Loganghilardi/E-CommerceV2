@@ -33,7 +33,7 @@
                                 {% set mul = contents.quantity * contents.product.price %}
                                 {% set sum = sum + mul %}
                             {% endfor %}
-                            <li><a href="">No: {{cart.id}} The {{cart.dateBuy|date("d/m/Y")}} For {{sum}}€</a></li>
+                            <li><a href="{{path('cart_show',{'id':cart.id})}}">No: {{cart.id}} The {{cart.dateBuy|date("d/m/Y")}} For {{sum}}€</a></li>
                         {% endfor %}
                     </ul>
                 </td>

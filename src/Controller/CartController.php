@@ -42,6 +42,18 @@ class CartController extends AbstractController
     }
 
     /**
+     * @Route("/{id}", name="cart_show", methods={"GET"})
+     */
+    public function show(Cart $cart): Response
+    {
+        //On prend uniquement le panier panier 
+        $entityManager = $this->getDoctrine()->getManager();
+        return $this->render('cart/show.html.twig', [
+            'cart' => $entityManager->getRepository(Cart::class)->findBy(['id'=>$cart->getId(),'status'=>true])[0],
+        ]);
+    }
+
+    /**
      * @Route("/delete/{id}", name="cart_delete")
      */
     public function deleteProduct(CartContent $cartContent, TranslatorInterface $t): Response

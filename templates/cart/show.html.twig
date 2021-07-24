@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <th>{{'cart.datebuy'|trans}}</th>
-                <td>{{ cart.dateBuy ? cart.dateBuy|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cart.dateBuy ? cart.dateBuy|date('d-m-Y H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>{{'cart.status'|trans}}</th>
@@ -22,13 +22,7 @@
         </tbody>
     </table>
 
-    <pre>
-        {{ dump(cart) }}
-    </pre>
-
     <a href="{{ path('cart_index') }}">{{'BackToList'|trans}}</a>
-
-    <a href="{{ path('cart_edit', {'id': cart.id}) }}">{{'cart.datebuy'|trans}}</a>
 
     {{ include('cart/_delete_form.html.twig') }}
 {% endblock %}
