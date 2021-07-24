@@ -11,6 +11,7 @@ Site e-commerce simple qui comporte juste un panier, des produits que l'utilisat
 - On stocke son panier dans une autre table pour pouvoir ensuite récupérer le panier de l'utilisateur lorsqu'il se reconnecte. (On ne travaille pas aves les sessions)
 - L'admin peut ajouter le rôle admin à un utilisateur via un back-office.
 - L'utilisateur peut supprimer des produits depuis son panier.
+- Un nouveau panier est crée lorsque l'utilisateur achète son panier et on lui assigne un nouveau panier pour cet utilisateur.
 
 # Credits
 
