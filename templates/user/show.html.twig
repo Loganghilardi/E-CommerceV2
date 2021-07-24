@@ -29,7 +29,7 @@
                     {% for cart in user.carts %}
                         <!-- Calcul du montant de la commande ici  -->
                         {% if cart.status != false %}
-                            <a href="{{path('cart_show', {'id':cart.id})}}">{{cart.id}} Date Montant</a>
+                            <a href="">{{cart.id}} {{cart.dateBuy}} Montant</a>
                         {% endif %}
                     {% endfor %}
                 </td>
