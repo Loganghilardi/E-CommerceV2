@@ -6,23 +6,42 @@
     <h1>{{'Cart'|trans}}</h1>
 
     <table class="table">
+        <thead>
+            <tr>
+                <th>{{'cart.product'|trans}}</th>
+                <th>{{'cart.amount'|trans}}</th>
+                <th>{{'cart.price'|trans}}</th>
+                <th>{{'cart.total'|trans}}</th>
+                <th>{{'cart.date'|trans}}</th>
+            </tr>
+        </thead>
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ cart.id }}</td>
-            </tr>
-            <tr>
-                <th>{{'cart.datebuy'|trans}}</th>
-                <td>{{ cart.dateBuy ? cart.dateBuy|date('d-m-Y H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>{{'cart.status'|trans}}</th>
-                <td>{{ cart.status ? 'Yes' : 'No' }}</td>
-            </tr>
+            {% set sum = 0 %}
+            {% for cartContent in cart.cartContents %}
+                <tr>
+                    <td>{{cartContent.product.name}}</td>
+                    <td>{{cartContent.quantity}}</td>
+                    <td>{{cartContent.product.price}} €</td>
+                    <td>{{cartContent.quantity * cartContent.product.price}} € </td>
+                    <td>{{cartContent.date | date('d/m/y')}}</td>
+                </tr>
+    
+                {% set multiply = cartContent.quantity * cartContent.product.price %}
+                {% set sum = sum + multiply %}
+            {% else %}
+                <tr>
+                    <td colspan="7">
+                        {{'cart.available'|trans}}
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
+        <tfoot>
+            <td colspan="3" class="text-right"><strong>{{'price.total'|trans}} :</strong></td>
+            <td></td>
+            <td> {{ sum }} €
+        </tfoot>
     </table>
 
-    <a href="{{ path('cart_index') }}">{{'BackToList'|trans}}</a>
-
-    {{ include('cart/_delete_form.html.twig') }}
+    <a href="{{ path('user_show',{'id':cart.user.id}) }}">{{'user.profile'|trans}}</a>
 {% endblock %}
