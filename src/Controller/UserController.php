@@ -37,7 +37,7 @@ class UserController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         return $this->render('user/show.html.twig', [
             'user' => $user,
-            'carts' => $entityManager->getRepository(Cart::class)->findAll(),
+            'carts' => $entityManager->getRepository(Cart::class)->findBy(['user'=>$user,'status'=>true]),
         ]);
     }
 

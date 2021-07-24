@@ -18,7 +18,7 @@
 				<td>{{cart.product.name}}</td>
 				<td>{{cart.quantity}}</td>
 				<td>{{cart.product.price}} €</td>
-				<td>{{ cart.quantity * cart.product.price}} € </td>
+				<td>{{cart.quantity * cart.product.price}} € </td>
 				<td>{{cart.date | date('d/m/y')}}</td>
 				<td>
 					<a href="{{path('cart_delete', {id: cart.id})}}" class="btn btn-warning">{{'Delete'|trans}}</a>
