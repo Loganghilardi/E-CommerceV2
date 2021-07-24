@@ -8,6 +8,21 @@ produit:
   deleted: Produit supprimé
   delete: Supprimer le produit
 
+panier:
+  buy: Acheter le panier
+  disponible : Pas de paniers disponible
+  produit: Nom du produit
+  quantite : Quantité
+  prix: Prix
+  montant: Montant
+  user : Utilisateur
+  date: Date
+  total: Total
+  pay : Panier payé
+  
+prix:
+  total: Prix total 
+  
 Produits: Produits
 Produit: Produit
 
@@ -23,3 +38,5 @@ Inscription: Inscription
 Déconnexion: Déconnexion
 
 Sauvegarder: Sauvegarder
+Panier: Panier
+Supprimer : Supprimer

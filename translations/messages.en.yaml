@@ -7,7 +7,22 @@ produit:
   edit: Edit product
   deleted: Product deleted
   delete: Delete product
+  
+panier:
+  buy: Buy the cart
+  disponible : No cart available
+  produit: Product name
+  quantite : Quantity
+  prix: Price
+  montant: Amount
+  user: User
+  date: Date
+  total: Total
+  pay : Cart paid
 
+prix:
+  total: Total price
+  
 Produits: Products
 Produit: Product
 
@@ -23,3 +38,5 @@ Inscription: Register
 Déconnexion: Log out
 
 Sauvegarder: Save
+Panier: Cart
+Supprimer : Delete 

@@ -23,7 +23,7 @@
                         {% endif %}
                         
                         {% if is_granted('ROLE_USER') %} 
-                        <a class="btn btn-sm btn-secondary" href="">Ajouter au panier</a>
+                        <a class="btn btn-sm btn-secondary" href="{{ path('cart_add', {'id': product.id}) }}">Ajouter au panier</a>
                         {% else %}
                             <a class="btn btn-sm btn-secondary" href="{{path('app_login')}}">Connecter vous pour ajouter le produit au panier</a>
                         {% endif %}
@@ -39,6 +39,5 @@
                 <p>{{ product.description }}</p>
             </div>
         </div>
-
     </div>
 {% endblock %}
