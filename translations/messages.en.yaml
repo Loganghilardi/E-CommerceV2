@@ -10,6 +10,7 @@ Register: Register
 Show: Show
 Edit: Edit
 Save: Save
+Sauvegarder: Save
 Create: Create
 BackToList: BackToList
 Delete : Delete
@@ -84,6 +85,7 @@ product:
   unknow: Unknown product
   quantity : Quantity
 
+Quantity : Quantity
 HomeTitle: Accueil | Ecommerce
 ListProducts: Liste de nos produits
 DescriptionProduct: Description du produit
