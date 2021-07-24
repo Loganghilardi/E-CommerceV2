@@ -20,7 +20,7 @@ user:
   role: Rôle
   registrationDate: Date d'inscription
   editRole: Modifier le Rôle
-  profile: Profile de l'utilisateur
+  profile: Profile
   editUser: Modifier l'utilisateur
   editPassWord: Modifier le mot de passe
   email: E-Mail
@@ -38,9 +38,9 @@ user:
 Error: Erreur
 
 error:
-    std: Une erreur est survenue.
-    notFound: Page non trouvée
-    internalError: Erreur interne du serveur
+  std: Une erreur est survenue.
+  notFound: Page non trouvée
+  internalError: Erreur interne du serveur
 
 Cart: Panier
 NewCart: Nouveau Panier
@@ -48,17 +48,6 @@ CreateNewCart: Créer un nouveau Panier
 EditCart: Modifier Panier
 
 cart:
-produit: 
-  added: Produit ajouté
-  empty: Aucun produit disponible
-  add: Ajouter un produit
-  unknow: Produit inconnu
-  updated: Produit mis à jour
-  edit: Modifier le produit
-  deleted: Produit supprimé
-  delete: Supprimer le produit
-
-panier:
   buy: Acheter le panier
   available : Pas de paniers disponible
   product: Nom du produit
@@ -69,6 +58,7 @@ panier:
   total: Total
   datebuy: Date d'achat
   status: Statut
+  pay : Panier payé
 
 price:
   total: Prix total 
@@ -77,37 +67,26 @@ Product: Produit
 NewProduct: Nouveau Produit
 
 product:
-  quantity : Quantité
+  actions: Actions
   added: Produit ajouté
+  addToCart: Ajouter au panier
+  add: Ajouter un produit
   deleted : Produit supprimé
-  name: Nom
+  delete: Supprimer le produit
   description: Description
+  name: Nom
   price: Prix
   stock: Stock
   image: Image
-  actions: Actions
-  addToCart: Ajouter au panier
-  edit: Modifier un Produit
+  edit: Modifier le Produit
+  empty: Aucun produit disponible
+  updated: Produit mis à jour
+  unknow: Produit inconnu
+  quantity : Quantité
 
-  pay : Panier payé
-  
-prix:
-  total: Prix total 
-  
-Produits: Produits
-Produit: Produit
-
-Liste de nos produits: Liste de nos produits
-Description du produit: Description du produit
-Prix du produit: Prix du produit
-Stock disponible: Stock disponible
-Pas de produits disponible: Pas de produits disponible
-
-Bonjour: Bonjour
-Connexion: Connexion
-Inscription: Inscription
-Déconnexion: Déconnexion
-
-Sauvegarder: Sauvegarder
-Panier: Panier
-Supprimer : Supprimer
+HomeTitle: Accueil | Ecommerce
+ListProducts: Liste de nos produits
+DescriptionProduct: Description du produit
+ProductPrice: Prix du produit
+StockAvailable: Stock disponible
+ProductNotAvailable: Pas de produits disponible

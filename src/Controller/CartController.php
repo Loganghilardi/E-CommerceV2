@@ -60,7 +60,7 @@ class CartController extends AbstractController
         $em->persist($newCart);
         $em->flush();
 
-        $this->addFlash('success', $t->trans('panier.pay'));
+        $this->addFlash('success', $t->trans('cart.pay'));
 
         return $this->redirectToRoute('product_index');
     }
@@ -87,7 +87,7 @@ class CartController extends AbstractController
         $entityManager->remove($cartContent);
         $entityManager->flush();
 
-        $this->addFlash('success', $t->trans('produit.deleted'));
+        $this->addFlash('success', $t->trans('product.deleted'));
 
         return $this->redirectToRoute('cart_index');
     }

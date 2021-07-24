@@ -35,8 +35,8 @@ user:
   unmod: has been demoted from
   cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
 
-
 Error: Error
+
 error:
   std: An error has occurred.
   notFound: Page not found
@@ -48,17 +48,6 @@ CreateNewCart: Create new Cart
 EditCart: Edit the Cart
 
 cart:
-produit: 
-  added: Product added
-  empty: There is no product
-  add: Add a product
-  unknow: Product unknow
-  updated: Product updated
-  edit: Edit product
-  deleted: Product deleted
-  delete: Delete product
-  
-panier:
   buy: Buy the cart
   available : No cart available
   product: Name of the product
@@ -69,6 +58,7 @@ panier:
   total: Total
   datebuy: Date Buy
   status: Status
+  pay : Cart paid
 
 price:
   total: Total Price 
@@ -77,36 +67,26 @@ Product: Product
 NewProduct: New Product
 
 product:
-  quantity : Quantity
+  actions: Actions
   added: Product added
+  addToCart: Add to the Cart
+  add: Add one Product
   deleted : Product deleted
-  name: Name
+  delete: Delete the product
   description: Description
+  name: Name
   price: Price
   stock: Stock
   image: Image
-  actions: Actions
-  addToCart: Add to the Cart
   edit: Edit the product
-  pay : Cart paid
+  empty: No product available
+  updated: Product updated
+  unknow: Unknown product
+  quantity : Quantity
 
-prix:
-  total: Total price
-  
-Produits: Products
-Produit: Product
-
-Liste de nos produits: List of products
-Description du produit: Product description
-Prix du produit: Product price
-Stock disponible: Available stock
-Pas de produits disponible: No products available
-
-Bonjour: Hello
-Connexion: Log in
-Inscription: Register
-Déconnexion: Log out
-
-Sauvegarder: Save
-Panier: Cart
-Supprimer : Delete 
+HomeTitle: Accueil | Ecommerce
+ListProducts: Liste de nos produits
+DescriptionProduct: Description du produit
+ProductPrice: Prix du produit
+StockAvailable: Stock disponible
+ProductNotAvailable: Pas de produits disponible
