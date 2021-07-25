@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @Route("/product")
+ * @Route("/{_locale}/product")
  */
 class ProductController extends AbstractController
 {

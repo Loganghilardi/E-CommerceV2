@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * @Route("/user")
+ * @Route("/{_locale}/user")
  */
 class UserController extends AbstractController
 {
