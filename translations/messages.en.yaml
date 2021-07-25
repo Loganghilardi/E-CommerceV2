@@ -13,35 +13,35 @@ Save: Save
 Sauvegarder: Save
 Create: Create
 BackToList: BackToList
-Delete : Delete
+Delete: Delete
 
 User: User
 
 user:
-  role: Role
-  registrationDate: Registrate Date
-  editRole: Edit the role
-  profile: Profile
-  editUser: Edit the user
-  editPassWord: Edit Password
-  email: E-Mail
-  firstname: Firstname
-  lastname: Lastname
-  orders: Orders
-  title: User list
-  toDays: List of users registered today
-  empty: There are no users!
-  notFound: User not found
-  mod: has been promoted to
-  unmod: has been demoted from
-  cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
+    role: Role
+    registrationDate: Registrate Date
+    editRole: Edit the role
+    profile: Profile
+    editUser: Edit the user
+    editPassWord: Edit Password
+    email: E-Mail
+    firstname: Firstname
+    lastname: Lastname
+    orders: Orders
+    title: User list
+    toDays: List of users registered today
+    empty: There are no users!
+    notFound: User not found
+    mod: has been promoted to
+    unmod: has been demoted from
+    cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
 
 Error: Error
 
 error:
-  std: An error has occurred.
-  notFound: Page not found
-  internalError: Server Internal Error
+    std: An error has occurred.
+    notFound: Page not found
+    internalError: Server Internal Error
 
 Cart: Cart
 NewCart: New Cart
@@ -49,46 +49,51 @@ CreateNewCart: Create new Cart
 EditCart: Edit the Cart
 
 cart:
-  buy: Buy the cart
-  available : No cart available
-  product: Name of the product
-  price: Price
-  amount: Amount
-  user : User
-  date: Date
-  total: Total
-  datebuy: Date Buy
-  status: Status
-  pay : Cart paid
+    buy: Buy the cart
+    available: No cart available
+    product: Name of the product
+    price: Price
+    amount: Amount
+    user: User
+    date: Date
+    total: Total
+    datebuy: Date Buy
+    status: Status
+    pay: Cart paid
+    id: Cart Id
+    seeContent: See cart content
+    list: Cart List
 
 price:
-  total: Total Price 
+    total: Total Price
 
 Product: Product
 NewProduct: New Product
 
 product:
-  actions: Actions
-  added: Product added
-  addToCart: Add to the Cart
-  add: Add one Product
-  deleted : Product deleted
-  delete: Delete the product
-  description: Description
-  name: Name
-  price: Price
-  stock: Stock
-  image: Image
-  edit: Edit the product
-  empty: No product available
-  updated: Product updated
-  unknow: Unknown product
-  quantity : Quantity
+    actions: Actions
+    added: Product added
+    addToCart: Add to the Cart
+    add: Add one Product
+    deleted: Product deleted
+    delete: Delete the product
+    description: Description
+    name: Name
+    price: Price
+    stock: Stock
+    image: Image
+    edit: Edit the product
+    empty: No product available
+    updated: Product updated
+    unknow: Unknown product
+    quantity: Quantity
 
-Quantity : Quantity
+Quantity: Quantity
 HomeTitle: Accueil | Ecommerce
 ListProducts: Liste de nos produits
 DescriptionProduct: Description du produit
 ProductPrice: Prix du produit
 StockAvailable: Stock disponible
 ProductNotAvailable: Pas de produits disponible
+Unbought cart list: List of unbought carts
+Unbought Cart: Unbought carts

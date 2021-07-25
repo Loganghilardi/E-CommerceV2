@@ -12,35 +12,35 @@ Save: Sauvegarder
 Sauvegarder: Sauvegarder
 Create: Créer
 BackToList: Retour à la liste
-Delete : Supprimer
+Delete: Supprimer
 
 User: Utilisateur
 
 user:
-  role: Rôle
-  registrationDate: Date d'inscription
-  editRole: Modifier le Rôle
-  profile: Profile
-  editUser: Modifier l'utilisateur
-  editPassWord: Modifier le mot de passe
-  email: E-Mail
-  firstname: Prénom
-  lastname: Nom
-  orders: Commandes
-  title: Liste des utilisateurs
-  toDays: Liste des utilisateurs inscrits aujourd'hui
-  empty: Il n'y a pas d'utilisateur!
-  notFound: Utilisateur introuvable
-  mod: a désormais accès au rôle
-  unmod: n'a plus accès au rôle
-  cantmod: ne peut pas être modifié car leur rôle est ROLE_SUPER_ADMIN
+    role: Rôle
+    registrationDate: Date d'inscription
+    editRole: Modifier le Rôle
+    profile: Profile
+    editUser: Modifier l'utilisateur
+    editPassWord: Modifier le mot de passe
+    email: E-Mail
+    firstname: Prénom
+    lastname: Nom
+    orders: Commandes
+    title: Liste des utilisateurs
+    toDays: Liste des utilisateurs inscrits aujourd'hui
+    empty: Il n'y a pas d'utilisateur!
+    notFound: Utilisateur introuvable
+    mod: a désormais accès au rôle
+    unmod: n'a plus accès au rôle
+    cantmod: ne peut pas être modifié car leur rôle est ROLE_SUPER_ADMIN
 
 Error: Erreur
 
 error:
-  std: Une erreur est survenue.
-  notFound: Page non trouvée
-  internalError: Erreur interne du serveur
+    std: Une erreur est survenue.
+    notFound: Page non trouvée
+    internalError: Erreur interne du serveur
 
 Cart: Panier
 NewCart: Nouveau Panier
@@ -48,46 +48,51 @@ CreateNewCart: Créer un nouveau Panier
 EditCart: Modifier Panier
 
 cart:
-  buy: Acheter le panier
-  available : Pas de paniers disponible
-  product: Nom du produit
-  price: Prix
-  amount: Montant
-  user : Utilisateur
-  date: Date
-  total: Total
-  datebuy: Date d'achat
-  status: Statut
-  pay : Panier payé
+    buy: Acheter le panier
+    available: Pas de paniers disponible
+    product: Nom du produit
+    price: Prix
+    amount: Montant
+    user: Utilisateur
+    date: Date
+    total: Total
+    datebuy: Date d'achat
+    status: Statut
+    pay: Panier payé
+    id: Id Panier
+    seeContent: Voir le contenu du panier
+    list: Liste des paniers
 
 price:
-  total: Prix total 
+    total: Prix total
 
 Product: Produit
 NewProduct: Nouveau Produit
 
 product:
-  actions: Actions
-  added: Produit ajouté
-  addToCart: Ajouter au panier
-  add: Ajouter un produit
-  deleted : Produit supprimé
-  delete: Supprimer le produit
-  description: Description
-  name: Nom
-  price: Prix
-  stock: Stock
-  image: Image
-  edit: Modifier le Produit
-  empty: Aucun produit disponible
-  updated: Produit mis à jour
-  unknow: Produit inconnu
-  quantity : Quantité
+    actions: Actions
+    added: Produit ajouté
+    addToCart: Ajouter au panier
+    add: Ajouter un produit
+    deleted: Produit supprimé
+    delete: Supprimer le produit
+    description: Description
+    name: Nom
+    price: Prix
+    stock: Stock
+    image: Image
+    edit: Modifier le Produit
+    empty: Aucun produit disponible
+    updated: Produit mis à jour
+    unknow: Produit inconnu
+    quantity: Quantité
 
-Quantity : Quantité
+Quantity: Quantité
 HomeTitle: Accueil | Ecommerce
 ListProducts: Liste de nos produits
 DescriptionProduct: Description du produit
 ProductPrice: Prix du produit
 StockAvailable: Stock disponible
 ProductNotAvailable: Pas de produits disponible
+Unbought cart list: Liste des paniers non-achetés
+Unbought Cart: Paniers non-achetés

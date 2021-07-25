@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Cart;
 use App\Entity\CartContent;
+use App\Repository\CartRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,6 +40,26 @@ class CartController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/mod/", name="cart_list")
+     */
+    public function List (CartRepository $cartRepository)
+    {
+        return $this->render('cart/list.html.twig', [
+            'carts' => $cartRepository->findNotBought(),
+        ]);
+    }
+        
+    /**
+     * @Route("/mod/{id}", name="cart_mod_show", methods={"GET"})
+     */
+    public function modShow(Cart $cart): Response
+    {
+        return $this->render('cart/show.html.twig', [
+            'cart' => $cart,
+        ]);
+    }
+
     /** @Route("/pay/{id}", name="cart_pay") */
     public function payCart(Cart $cart, TranslatorInterface $t): Response
     {
@@ -70,7 +91,7 @@ class CartController extends AbstractController
      */
     public function show(Cart $cart): Response
     {
-        //On prend uniquement le panier panier 
+        //On prend uniquement le panier payé 
         $entityManager = $this->getDoctrine()->getManager();
         return $this->render('cart/show.html.twig', [
             'cart' => $entityManager->getRepository(Cart::class)->findBy(['id'=>$cart->getId(),'status'=>true])[0],

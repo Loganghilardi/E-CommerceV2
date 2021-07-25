@@ -19,22 +19,19 @@ class CartRepository extends ServiceEntityRepository
         parent::__construct($registry, Cart::class);
     }
 
-    // /**
-    //  * @return Cart[] Returns an array of Cart objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Cart[] Returns an array of Cart objects
+     */
+    public function findNotBought()
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('c.status = 0')
             ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+   
 
     /*
     public function findOneBySomeField($value): ?Cart

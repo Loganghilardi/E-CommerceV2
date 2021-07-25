@@ -6,7 +6,7 @@
 <div style="background-color: #f8f9fa;" class="container bg">
     <div class="row d-flex justify-content-between p-2">
         <h3 class="col-3">{{'ListProducts'|trans}}</h3>
-        {% if is_granted('ROLE_ADMIN') %} 
+        {% if (is_granted('ROLE_ADMIN') or is_granted('ROLE_SUPER_ADMIN'))  %} 
             <a class="btn btn-primary col-2" href="{{ path('product_new') }}">{{'product.add'|trans}}</a>
         {% endif %}
     </div>

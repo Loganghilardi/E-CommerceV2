@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{'Unbought cart list'|trans}}{% endblock %}
+
+{% block body %}
+    <h1>{{'Unbought Cart'|trans}}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{'cart.id'|trans}}</th>
+                <th>{{'cart.user'|trans}}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cart in carts %}
+                <tr>
+                    <td>{{cart.id}}</td>
+                    <td>{{cart.user}}</td>
+                    <td><a href="{{path('cart_mod_show',{'id':cart.id})}}" class="btn btn-primary">{{ 'cart.seeContent' | trans}}</a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">
+                        {{'cart.available'|trans}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
