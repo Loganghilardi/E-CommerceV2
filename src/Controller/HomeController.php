@@ -7,10 +7,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="noLocale")
+     */
+    public function NoLocale():Response
+    {
+        return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/{_locale}/", name="home")
      */
     public function index():Response
     {
