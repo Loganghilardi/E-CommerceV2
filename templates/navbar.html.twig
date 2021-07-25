@@ -7,27 +7,36 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{path('home')}}">Accueil</a>
+					<a class="nav-link active" aria-current="page" href="{{path('home')}}">{{'Home'|trans}}</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{path('cart_index')}}">Panier</a>
+					<a class="nav-link" href="{{path('product_index')}}">{{'Product'|trans}}</a>
 				</li>
-            </ul>
-
-            <div class="d-flex">
-                {% if app.user %}
-                <a class="nav-link" href="{{ path('app_logout') }}">{{"Déconnexion"|trans}}</a>
-                {% else %}
-                    <a class="nav-link" href="{{path('app_register')}}">{{"Inscription"|trans}}</a>
-                {% endif %}
-                {% if app.user %}
-                    <a class="nav-link">{{"Bonjour"|trans}}
-                        {{app.user.firstName}}
-                    </a>
-                {% else %}
-                    <a class="nav-link" href="{{path('app_login')}}">{{"Connexion"|trans}}</a>
-                {% endif %}
-            </div>
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('cart_index')}}">{{'Cart'|trans}}</a>
+				</li>
+				{% if is_granted('ROLE_SUPER_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('user_index')}}">{{ 'user.title'|trans}}</a>
+				</li>
+				{% endif %}
+				<li class="nav-item">
+					{% if app.user %}
+						<a class="nav-link" href="{{path('user_show',{'id':app.user.id})}}">{{'Hello'|trans}}
+							{{app.user.email}}
+						</a>
+					{% else %}
+						<a class="nav-link" href="{{path('app_login')}}">{{'Login'|trans}}</a>
+					{% endif %}
+				</li>
+				<li class="nav-item">
+					{% if app.user %}
+						<a class="nav-link" href="{{ path('app_logout') }}">{{'Logout'|trans}}</a>
+					{% else %}
+						<a class="nav-link" href="{{path('app_register')}}">{{'Register'|trans}}</a>
+					{% endif %}
+				</li>
+			</ul>
 		</div>
 	</div>
 </nav>

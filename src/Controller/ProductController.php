@@ -62,7 +62,7 @@ class ProductController extends AbstractController
             $entityManager->persist($product);
             $entityManager->flush();
 
-            $this->addFlash('success', $t->trans('produit.added'));
+            $this->addFlash('success', $t->trans('product.added'));
 
             return $this->redirectToRoute('home', [], Response::HTTP_SEE_OTHER);
         }
@@ -179,7 +179,7 @@ class ProductController extends AbstractController
             $entityManager->persist($cartContent);
             $entityManager->flush();
 
-            $this->addFlash('success', $t->trans('produit.added'));
+            $this->addFlash('success', $t->trans('product.added'));
 
             return $this->redirectToRoute('product_index');
         }

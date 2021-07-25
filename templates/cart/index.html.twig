@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-	{{'Panier'|trans}}
+	{{'Cart'|trans}}
 {% endblock %}
 
 {% block body %}
-	<h1>{{'Panier'|trans}}</h1>
+	<h1>{{'Cart'|trans}}</h1>
 
 	{% include "cart/_form.html.twig" with {'carts': cart} %}
 

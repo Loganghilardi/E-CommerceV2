@@ -1,42 +1,94 @@
-produit: 
-  added: Product added
-  empty: There is no product
-  add: Add a product
-  unknow: Product unknow
-  updated: Product updated
-  edit: Edit product
-  deleted: Product deleted
-  delete: Delete product
-  
-panier:
+Home: Home
+Hello: Hello
+Login: Login
+LoginMessage: You are logged in as
+SignInMessage: Please sign in
+Password: Password
+Email: Email
+Logout: Logout
+Register: Register
+Show: Show
+Edit: Edit
+Save: Save
+Sauvegarder: Save
+Create: Create
+BackToList: BackToList
+Delete : Delete
+
+User: User
+
+user:
+  role: Role
+  registrationDate: Registrate Date
+  editRole: Edit the role
+  profile: Profile
+  editUser: Edit the user
+  editPassWord: Edit Password
+  email: E-Mail
+  firstname: Firstname
+  lastname: Lastname
+  orders: Orders
+  title: User list
+  toDays: List of users registered today
+  empty: There are no users!
+  notFound: User not found
+  mod: has been promoted to
+  unmod: has been demoted from
+  cantmod: cannot be promoted/demoted because they have the role ROLE_SUPER_ADMIN
+
+Error: Error
+
+error:
+  std: An error has occurred.
+  notFound: Page not found
+  internalError: Server Internal Error
+
+Cart: Cart
+NewCart: New Cart
+CreateNewCart: Create new Cart
+EditCart: Edit the Cart
+
+cart:
   buy: Buy the cart
-  disponible : No cart available
-  produit: Product name
-  quantite : Quantity
-  prix: Price
-  montant: Amount
-  user: User
+  available : No cart available
+  product: Name of the product
+  price: Price
+  amount: Amount
+  user : User
   date: Date
   total: Total
+  datebuy: Date Buy
+  status: Status
   pay : Cart paid
 
-prix:
-  total: Total price
-  
-Produits: Products
-Produit: Product
+price:
+  total: Total Price 
 
-Liste de nos produits: List of products
-Description du produit: Product description
-Prix du produit: Product price
-Stock disponible: Available stock
-Pas de produits disponible: No products available
+Product: Product
+NewProduct: New Product
 
-Bonjour: Hello
-Connexion: Log in
-Inscription: Register
-Déconnexion: Log out
+product:
+  actions: Actions
+  added: Product added
+  addToCart: Add to the Cart
+  add: Add one Product
+  deleted : Product deleted
+  delete: Delete the product
+  description: Description
+  name: Name
+  price: Price
+  stock: Stock
+  image: Image
+  edit: Edit the product
+  empty: No product available
+  updated: Product updated
+  unknow: Unknown product
+  quantity : Quantity
 
-Sauvegarder: Save
-Panier: Cart
-Supprimer : Delete 
+Quantity : Quantity
+HomeTitle: Accueil | Ecommerce
+ListProducts: Liste de nos produits
+DescriptionProduct: Description du produit
+ProductPrice: Prix du produit
+StockAvailable: Stock disponible
+ProductNotAvailable: Pas de produits disponible

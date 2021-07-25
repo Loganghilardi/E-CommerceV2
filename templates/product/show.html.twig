@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product{% endblock %}
+{% block title %}{{'Product'|trans}}{% endblock %}
 
 {% block body %}
+    <h1>{{'Product'|trans}}</h1>
     <div class="container">
         <div class="row pt-2">
             <div class="col-6">
@@ -12,13 +13,13 @@
                 <div class="row">
                     <h1>{{ product.name }}</h1>
                     <div class="col-6">
-                        <p>{{'Prix du produit'|trans}} : {{ product.price }}€</p>
-                        <p>{{'Stock disponible'|trans}} : {{ product.stock }}</p>
+                        <p>{{'ProductPrice'|trans}} : {{ product.price }}€</p>
+                        <p>{{'StockAvailable'|trans}} : {{ product.stock }}</p>
 
                     </div>
                     <div class="col-4">
                         {% if is_granted('ROLE_ADMIN') %} 
-                        <a class="btn btn-sm btn-secondary" href="{{ path('product_edit', {'id': product.id}) }}">{{'produit.edit'|trans}}</a>
+                        <a class="btn btn-sm btn-secondary" href="{{ path('product_edit', {'id': product.id}) }}">{{'product.edit'|trans}}</a>
                         {{ include('product/_delete_form.html.twig') }}
                         {% endif %}
                         
@@ -27,7 +28,6 @@
                         {% else %}
                             <a class="btn btn-sm btn-secondary" href="{{path('app_login')}}">Connecter vous pour ajouter le produit au panier</a>
                         {% endif %}
-         
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
         <hr>
         <div class="row">
             <div class="col-12">
-                <h3>{{'Description du produit'|trans}} : </h3>
+                <h3>{{'DescriptionProduct'|trans}} : </h3>
                 <p>{{ product.description }}</p>
             </div>
         </div>

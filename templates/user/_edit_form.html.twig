@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, { 'attr':{'disabled':'disabled'} })}}
+        </div>
+        <div class="col">
+            {{ form_label(form.firstName) }}
+            {{ form_widget(form.firstName) }}
+        </div>
+        <div class="col">
+            {{ form_label(form.lastName) }}
+            {{ form_widget(form.lastName) }}
+        </div>
+    </div>
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    <a class="btn btn-primary" href="{{ path('user_show', {'id': user.id}) }}">{{'user.profile'|trans}}</a>
+{{ form_end(form) }}

@@ -1,42 +1,94 @@
-produit: 
-  added: Produit ajouté
-  empty: Aucun produit disponible
-  add: Ajouter un produit
-  unknow: Produit inconnu
-  updated: Produit mis à jour
-  edit: Modifier le produit
-  deleted: Produit supprimé
-  delete: Supprimer le produit
+Home: Accueil
+Hello: Bonjour
+Login: Se Connecter
+LoginMessage: Vous êtes connecter entant que You are logged in as
+SignInMessage: Veuillez-vous conneceter Please sign in
+Password: Mot de passe
+Email: Email
+Logout: Se Déconnecter
+Register: S'inscrire
+Show: Montrer
+Edit: Modifier
+Save: Sauvegarder
+Sauvegarder: Sauvegarder
+Create: Créer
+BackToList: Retour à la liste
+Delete : Supprimer
 
-panier:
+User: Utilisateur
+
+user:
+  role: Rôle
+  registrationDate: Date d'inscription
+  editRole: Modifier le Rôle
+  profile: Profile
+  editUser: Modifier l'utilisateur
+  editPassWord: Modifier le mot de passe
+  email: E-Mail
+  firstname: Prénom
+  lastname: Nom
+  orders: Commandes
+  title: Liste des utilisateurs
+  toDays: Liste des utilisateurs inscrits aujourd'hui
+  empty: Il n'y a pas d'utilisateur!
+  notFound: Utilisateur introuvable
+  mod: a désormais accès au rôle
+  unmod: n'a plus accès au rôle
+  cantmod: ne peut pas être modifié car leur rôle est ROLE_SUPER_ADMIN
+
+Error: Erreur
+
+error:
+  std: Une erreur est survenue.
+  notFound: Page non trouvée
+  internalError: Erreur interne du serveur
+
+Cart: Panier
+NewCart: Nouveau Panier
+CreateNewCart: Créer un nouveau Panier
+EditCart: Modifier Panier
+
+cart:
   buy: Acheter le panier
-  disponible : Pas de paniers disponible
-  produit: Nom du produit
-  quantite : Quantité
-  prix: Prix
-  montant: Montant
+  available : Pas de paniers disponible
+  product: Nom du produit
+  price: Prix
+  amount: Montant
   user : Utilisateur
   date: Date
   total: Total
+  datebuy: Date d'achat
+  status: Statut
   pay : Panier payé
-  
-prix:
+
+price:
   total: Prix total 
-  
-Produits: Produits
-Produit: Produit
 
-Liste de nos produits: Liste de nos produits
-Description du produit: Description du produit
-Prix du produit: Prix du produit
-Stock disponible: Stock disponible
-Pas de produits disponible: Pas de produits disponible
+Product: Produit
+NewProduct: Nouveau Produit
 
-Bonjour: Bonjour
-Connexion: Connexion
-Inscription: Inscription
-Déconnexion: Déconnexion
+product:
+  actions: Actions
+  added: Produit ajouté
+  addToCart: Ajouter au panier
+  add: Ajouter un produit
+  deleted : Produit supprimé
+  delete: Supprimer le produit
+  description: Description
+  name: Nom
+  price: Prix
+  stock: Stock
+  image: Image
+  edit: Modifier le Produit
+  empty: Aucun produit disponible
+  updated: Produit mis à jour
+  unknow: Produit inconnu
+  quantity : Quantité
 
-Sauvegarder: Sauvegarder
-Panier: Panier
-Supprimer : Supprimer
+Quantity : Quantité
+HomeTitle: Accueil | Ecommerce
+ListProducts: Liste de nos produits
+DescriptionProduct: Description du produit
+ProductPrice: Prix du produit
+StockAvailable: Stock disponible
+ProductNotAvailable: Pas de produits disponible

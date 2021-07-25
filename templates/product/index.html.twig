@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Product index{% endblock %}
+{% block title %}{{'Product'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Product index</h1>
+    <h1>{{'Product'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Image</th>
-                <th>actions</th>
+                <th>{{'product.name'|trans}}</th>
+                <th>{{'product.description'|trans}}</th>
+                <th>{{'product.price'|trans}}</th>
+                <th>{{'product.stock'|trans}}</th>
+                <th>{{'product.image'|trans}}</th>
+                <th>{{'product.actions'|trans}}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,17 +27,17 @@
                 <td>{{ product.stock }}</td>
                 <td>{{ product.image }}</td>
                 <td>
-                    <a href="{{ path('product_show', {'id': product.id}) }}">show</a>
-                    <a href="{{ path('product_edit', {'id': product.id}) }}">edit</a>
+                    <a href="{{ path('product_show', {'id': product.id}) }}">{{'Show'|trans}}</a>
+                    <a href="{{ path('product_edit', {'id': product.id}) }}">{{'Edit'|trans}}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">{{'error.notFound'|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('product_new') }}">Create new</a>
+    <a href="{{ path('product_new') }}">{{'Create'|trans}}</a>
 {% endblock %}
