@@ -42,6 +42,7 @@ error:
     std: An error has occurred.
     notFound: Page not found
     internalError: Server Internal Error
+    forbidden: Access denied
 
 Cart: Cart
 NewCart: New Cart
